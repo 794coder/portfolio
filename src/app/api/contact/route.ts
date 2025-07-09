@@ -3,7 +3,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
-export default async function handler(
+export default async function POST(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
