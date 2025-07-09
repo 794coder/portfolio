@@ -13,31 +13,13 @@ const Contact = () => {
   const handleSubmit = async (e:React.FormEvent) => {
   e.preventDefault();
   setStatus("Sending...");
-
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      setStatus("Thank you! We'll reach you shortly.");
-    } else {
-      setStatus("Something went wrong. Please try again.");
-    }
-  } catch {
-    setStatus("Server error.");
-  } finally {
     setForm({
       name: "",
       email: "",
       subject: "",
       message: "",
     });
-  }
+
 };
 
 
